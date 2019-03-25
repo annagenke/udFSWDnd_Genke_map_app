@@ -9,7 +9,7 @@ const LocationList =[
     {name: 'City of Saints Coffee', location: {lat: 40.753052,lng:-74.0271073}},
     {name: 'Brooklyn Boulders Gowanus', location: {lat: 40.6798189, lng:-73.9840819}},
     {name: 'Brooklyn Boulders Queensbridge', location: {lat: 40.7525859, lng:-73.9401946}},
-    {name: 'Ample Hills Creamery', location: {lat:;i 40.6789223,lng:-73.9873624}},
+    {name: 'Ample Hills Creamery', location: {lat: 40.6789223,lng:-73.9873624}},
     {name: 'Central Park', location: {lat: 40.778752, lng: -73.963646}}
 ];
 
