@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Title</title>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <h1>Places I drag my boyfriend</h1>
+            <div>
+                <input  class="form-control" data-bind='value: search, valueUpdate: "afterkeydown"'>
+                <ul class="list-group list-group-flush" data-bind = "foreach:locations">
+                    <li class="list-group-item" data-bind="text: name, click: $parent.listClick, visible: visible"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div id="map"></div>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+<script src="js/knockout-3.5.0.js"></script>
+<script src="js/points.js"></script>
+<script src="js/app.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkkFbgQ3uEiHnk3r5dILKP7aPp0y8U14M&callback=initMap&libraries=places",onerror="googleMapError()">
+</script>
+
+</body>
+</html>
