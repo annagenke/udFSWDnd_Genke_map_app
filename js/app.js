@@ -18,6 +18,7 @@ function initMap() {
 // Location Object
 // Location has the data for each point
 // and the marker
+//implementation inspired by https://github.com/doobieroo/Neighborhood-Map
 var Location = function(data) {
     var self = this;
 
@@ -76,7 +77,9 @@ var Location = function(data) {
     });
 
 
-    // Construct marker for this location object
+    // Construct marker for this location object.
+    // by having the marker inside a location object, it is easier to bind
+    // with location info
     this.marker = new google.maps.Marker({
         position: new google.maps.LatLng(data.location),
         title: data.name,
@@ -109,6 +112,7 @@ var Location = function(data) {
         setTimeout(function() {
             self.marker.setAnimation(null);
         }, 1000);
+        //saw other students adding timeout so it doesn't keep bouncinh
 
         // Pan to the marker and open its information
         infoWindow.open(map, this);
