@@ -159,5 +159,5 @@ var ViewModel = function() {
 
 // onerror="googleMapError()" called if google Map cannot load
 function googleMapError() {
-    window.alert('The map could not be loaded. Please check your connection and try again.');
+    window.alert('The map could not be loaded.');
 }
