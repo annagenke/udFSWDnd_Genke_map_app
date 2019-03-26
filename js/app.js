@@ -74,6 +74,9 @@ var Location = function(data) {
             };
         };
 
+    }).fail(function() {
+        // failed to load FourSquare data
+        alert('Failed to retrieve foursquare data.');
     });
 
 
@@ -102,8 +105,9 @@ var Location = function(data) {
     this.marker.addListener('click', function() {
         self.contentStr = '<div><strong>' + data.name + '</strong></div><br>'+'' +
             '<div>' + self.street + '</div>' +
-            '<div>' + self.city_st_zip + '</div>'+
-            '<div>' + self.rating + '<i class="fas fa-star"></i></div>';
+            '<div>' + self.city_st_zip + '</div>';
+        if (self.rating != '')
+            self.contentStr=self.contentStr+'<div>' + self.rating + '<i class="fas fa-star"></i></div>';
 
         infoWindow.setContent(self.contentStr);
 
@@ -159,5 +163,6 @@ var ViewModel = function() {
 
 // onerror="googleMapError()" called if google Map cannot load
 function googleMapError() {
-    window.alert('The map could not be loaded.');
+    console.log("error")
+    alert('The map could not be loaded.');
 }

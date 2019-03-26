@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neighborhood Map</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- found on w3school-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Title</title>
@@ -13,29 +15,43 @@
 <body>
 <div class="container-fluid">
     <div class="row content">
-        <div class="col-sm-3 sidenav">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <h1>Places I drag my boyfriend</h1>
-            <div>
-                <input  class="form-control" data-bind='value: search, valueUpdate: "afterkeydown"'>
+            <div class="mysidebar">
+                <input  class="form-control" placeholder="search..." data-bind='value: search, valueUpdate: "afterkeydown"'>
                 <ul class="list-group list-group-flush" data-bind = "foreach:locations">
                     <li class="list-group-item" data-bind="text: name, click: $parent.listClick, visible: visible"></li>
                 </ul>
             </div>
         </div>
 
-        <div class="col-sm-9">
+        <div class="col-sm-12">
+            <div class="openbtn">
+                <span onclick="openNav()" ><i class="fa fa-bars fa-2x"></i></span>
+            </div>
             <div id="map"></div>
 
         </div>
     </div>
 </div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
 <script src="js/knockout-3.5.0.js"></script>
 <script src="js/points.js"></script>
 <script src="js/app.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkkFbgQ3uEiHnk3r5dILKP7aPp0y8U14M&callback=initMap&libraries=places",onerror="googleMapError()">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkkFbgQ3uEiHnk3r5dILKP7aPp0y8U14M&callback=initMap&libraries=places" onerror="googleMapError()" >
 </script>
 
 </body>

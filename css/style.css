@@ -17,8 +17,11 @@ body {
 .row {
     height: 100%;
 }
+ul{
+    overflow:scroll;
+}
 
-.col-sm-9 {
+.col-sm-12 {
     padding: 0px !important;
 }
 
@@ -38,6 +41,10 @@ h1 {
     height: 100%;
 }
 
+.mysidebar{
+    overflow: hidden;
+}
+
 .options-box {
     background: #fff;
     border: 1px solid #999;
@@ -47,4 +54,40 @@ h1 {
     padding: 10px 10px 30px 10px;
     text-align: left;
     width: 340px;
+}
+.list-group{
+    overflow-y:scroll;
+    margin-bottom: 10px;
+
+}
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 25px;
+    margin-left: 50px;
+}
+.openbtn{
+    z-index: 10;
+    top: 0;
+    right: 25px;
+    font-size: 18px;
+    margin-left: 10px;
+
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
