@@ -16,6 +16,8 @@ in order to get this project, fork this repository and clone
 it to your machine.
 
 ### Running the project
+Click [here](https://annagenke.github.io/udFSWDnd_Genke_map_app/) for a live preview.
+
 all you have to do to run the project is open the index.html
 file in a web browser. This project was tested in google chrome.
 
